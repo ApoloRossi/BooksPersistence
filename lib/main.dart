@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:livros/screens/home.dart';
+import 'package:livros/sqlite/listPerson.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +14,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: Colors.amber,
       ),
-      home: const MyHomePage(title: 'Livros')
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const Home(),
+        "/person": (context) => const ListPerson(),
+      },
     );
   }
 }
